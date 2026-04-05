@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv 'assets/images/81a397772dfc048014f1902a0c5cef20e2241de5.png' 'assets/images/bg-forest.png')",
+      "Bash(mv 'assets/images/116bcac304957fcbcda39d1d47f087b8447ea5a8.png' 'assets/images/bg-snow.png')",
+      "Bash(cp 'assets/images/Home/Hero Section/2ea8b50ff4413900084b629c36d477332220830e.png' 'assets/images/bg-ball.png')",
+      "Bash(cp 'assets/images/Home/About Section/81a397772dfc048014f1902a0c5cef20e2241de5.png' 'assets/images/santa.png')",
+      "Bash(pip3 list:*)",
+      "Bash(python:*)",
+      "Bash(mkdir -p christmas-shop)",
+      "Bash(mv index.html gifts.html .gitignore assets css doc js christmas-shop/)"
+    ]
+  }
+}
