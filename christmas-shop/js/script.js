@@ -1,33 +1,11 @@
 /* ===== Christmas Shop - JavaScript ===== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ===== Smooth Scroll (fallback for older browsers) =====
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
   // ===== Explore Buttons (navigate to Gifts page) =====
   document.querySelectorAll('.btn-explore').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       window.location.href = 'gifts.html';
-    });
-  });
-
-  // ===== Logo click (navigate to Home page) =====
-  const logo = document.querySelector('.logo');
-  if (logo) {
-    logo.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = 'index.html';
     });
   });
 

@@ -156,7 +156,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.btn-explore:hover { opacity: 0.85; }
+.btn-explore:hover { background: #2a3040; }
 
 .gift-card {
   width: 310px;
@@ -304,6 +304,7 @@ body {
 .nav-item .nav-link-text {
   color: var(--color-dark);
   pointer-events: none;
+  transition: color 0.3s ease;
 }
 
 .nav-item.active .nav-link-text {
@@ -873,7 +874,7 @@ span.nav-item {
   color: inherit;
 }
 
-.footer-card:hover { transform: translateY(-4px); }
+.footer-card:hover { transform: translateY(-4px); background: #dde8f0; }
 
 .footer-card-icon {
   width: 80px;
