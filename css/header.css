@@ -1,0 +1,344 @@
+/* Header */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px 8px;
+
+width: 1440px;
+height: 64px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 0px;
+gap: 12px;
+
+width: 1276px;
+max-width: 1276px;
+height: 64px;
+
+background: #FFFFFF;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Logo */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 20px;
+gap: 8px;
+
+width: 141px;
+height: 40px;
+
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* snowflake */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 6.92%;
+right: 6.92%;
+top: 0%;
+bottom: 0%;
+
+background: #FF4646;
+
+
+/* Action Small */
+
+width: 69px;
+height: 16px;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #181C29;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+padding: 0px;
+
+width: 1123px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 1;
+
+
+/* Items */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+width: 376px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Item */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 20px;
+
+width: 78px;
+height: 40px;
+
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Action Small */
+
+width: 38px;
+height: 16px;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #181C29;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Item */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 20px;
+
+width: 88px;
+height: 40px;
+
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Action Small */
+
+width: 48px;
+height: 16px;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #181C29;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Item */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 20px;
+
+width: 74px;
+height: 40px;
+
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Action Small */
+
+width: 34px;
+height: 16px;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #181C29;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Item */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 12px 20px;
+
+width: 112px;
+height: 40px;
+
+border-radius: 12px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Action Small */
+
+width: 72px;
+height: 16px;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #181C29;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Burger */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 8px;
+
+display: none;
+width: 40px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;

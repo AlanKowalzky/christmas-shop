@@ -1,0 +1,163 @@
+/* Hero Section */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 60px 8px;
+
+width: 1440px;
+height: 524px;
+
+background: url(bg-ball.png), url(bg-snow.png), #FF4646;
+border-radius: 20px 20px 0px 0px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 60px 0px;
+gap: 12px;
+
+width: 426px;
+max-width: 426px;
+height: 404px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Caption */
+
+width: 426px;
+height: 24px;
+
+/* Caption */
+font-family: 'Allura';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 100%;
+/* identical to box height, or 24px */
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Header 1 */
+
+width: 426px;
+height: 144px;
+
+/* Header 1 */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 150%;
+/* or 48px */
+text-align: center;
+letter-spacing: 0.18em;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 20px 32px;
+
+width: 235px;
+height: 56px;
+
+background: #181C29;
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Action Small */
+
+width: 171px;
+height: 16px;
+
+/* Action Small */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 12px;
+line-height: 130%;
+/* identical to box height, or 16px */
+text-align: center;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Caption */
+
+width: 426px;
+height: 24px;
+
+/* Caption */
+font-family: 'Allura';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 100%;
+/* identical to box height, or 24px */
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;

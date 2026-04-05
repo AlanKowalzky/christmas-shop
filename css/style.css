@@ -461,7 +461,6 @@ body {
 
 .slider-viewport {
   width: var(--container-width);
-
   height: 200px;
   overflow: hidden;
   position: relative;
@@ -472,9 +471,18 @@ body {
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  width: 1993px;
+  width: max-content;
   height: 200px;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+}
+
+.slider-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .slider-text {

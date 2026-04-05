@@ -1,0 +1,245 @@
+/* Slider */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 1993px;
+height: 200px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 184px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* snowman */
+
+width: 200px;
+height: 200px;
+
+background: url(snowman.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 330px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* christmas-trees */
+
+width: 200px;
+height: 200px;
+
+background: url(christmas-trees.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 224px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+flex-grow: 0;
+
+
+/* christmas-tree-ball */
+
+width: 200px;
+height: 200px;
+
+background: url(christmas-tree-ball.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 315px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+flex-grow: 0;
+
+
+/* fairytale-house */
+
+width: 200px;
+height: 200px;
+
+background: url(fairytale-house.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;

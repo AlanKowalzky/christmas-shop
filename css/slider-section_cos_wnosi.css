@@ -1,0 +1,492 @@
+/* Slider Section */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 60px 8px;
+
+width: 1440px;
+height: 488px;
+
+background: url(bg-snow.png), #FF4646;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 1276px;
+max-width: 1276px;
+height: 368px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 12px;
+
+width: 426px;
+max-width: 426px;
+height: 72px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Caption  */
+
+width: 426px;
+height: 24px;
+
+/* Caption */
+font-family: 'Allura';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 100%;
+/* identical to box height, or 24px */
+text-align: center;
+letter-spacing: 0.05em;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Header 2 */
+
+width: 426px;
+height: 36px;
+
+/* Header 2 */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 152%;
+/* or 36px */
+text-align: center;
+letter-spacing: 0.16em;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Row */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+
+width: 1276px;
+height: 200px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Slider */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 1993px;
+height: 200px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 184px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* snowman */
+
+width: 200px;
+height: 200px;
+
+background: url(snowman.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 330px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* christmas-trees */
+
+width: 200px;
+height: 200px;
+
+background: url(christmas-trees.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 224px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+flex-grow: 0;
+
+
+/* christmas-tree-ball */
+
+width: 200px;
+height: 200px;
+
+background: url(christmas-tree-ball.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Slider Text */
+
+width: 315px;
+height: 98px;
+
+/* Slider Text */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 80px;
+line-height: 98px;
+/* identical to box height */
+text-align: center;
+text-transform: uppercase;
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 6;
+flex-grow: 0;
+
+
+/* Image Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 200px;
+height: 200px;
+
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 7;
+flex-grow: 0;
+
+
+/* fairytale-house */
+
+width: 200px;
+height: 200px;
+
+background: url(fairytale-house.png);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Container */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 1276px;
+height: 56px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 56px;
+height: 56px;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* arrow-left */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 25%;
+right: 22.92%;
+top: 25%;
+bottom: 25%;
+
+border: 1px solid rgba(255, 255, 255, 0.4);
+
+
+/* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+width: 56px;
+height: 56px;
+
+border: 1px solid #FFFFFF;
+border-radius: 20px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* arrow-right */
+
+width: 24px;
+height: 24px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Vector */
+
+position: absolute;
+left: 25%;
+right: 22.92%;
+top: 25%;
+bottom: 25%;
+
+border: 1px solid #FFFFFF;
+transform: matrix(-1, 0, 0, 1, 0, 0);

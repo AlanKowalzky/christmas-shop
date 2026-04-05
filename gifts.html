@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gifts - Christmas Shop</title>
+    <link rel="icon" href="assets/snowflake.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="assets/snowflake.svg" alt="The Gifts Logo">
+                    <span class="action-small" style="color: #181C29;">THE GIFTS</span>
+                </a>
+                <div class="nav-container">
+                    <nav class="nav-items">
+                        <a href="gifts.html" class="nav-item active">
+                            <span class="action-small nav-link-text">GIFTS</span>
+                        </a>
+                        <a href="index.html#about" class="nav-item">
+                            <span class="action-small nav-link-text">ABOUT</span>
+                        </a>
+                        <a href="index.html#best-gifts" class="nav-item">
+                            <span class="action-small nav-link-text">BEST</span>
+                        </a>
+                        <a href="#footer" class="nav-item">
+                            <span class="action-small nav-link-text">CONTACTS</span>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Gifts Page Content -->
+        <main class="gifts-page">
+            <section id="gifts" class="gifts-section">
+                <div class="gifts-section-container">
+                    <div class="gifts-section-header">
+                        <p class="caption" style="color: #FFFFFF;">All Gifts</p>
+                        <h1 class="header-1">Magical Gift Collection</h1>
+                    </div>
+
+                    <div class="tabs">
+                        <button class="tab active" data-category="all">ALL</button>
+                        <button class="tab" data-category="work">FOR WORK</button>
+                        <button class="tab" data-category="health">FOR HEALTH</button>
+                        <button class="tab" data-category="harmony">FOR HARMONY</button>
+                    </div>
+
+                    <div class="gifts-page-grid">
+                        <!-- Card 1: FOR WORK -->
+                        <div class="gift-card" data-category="work" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <rect x="105" y="90" width="100" height="80" rx="8" fill="#4361FF"/>
+                                    <rect x="150" y="60" width="10" height="120" fill="#3451CC"/>
+                                    <ellipse cx="155" cy="65" rx="25" ry="10" fill="#3451CC"/>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Console.log Guru</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="work">FOR WORK</span>
+                                <h3 class="header-3">Console.log Guru</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: FOR HEALTH -->
+                        <div class="gift-card" data-category="health" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <circle cx="155" cy="95" r="50" fill="#06A44F"/>
+                                    <text x="155" y="88" text-anchor="middle" fill="white" font-size="28" font-weight="bold">+</text>
+                                    <text x="155" y="118" text-anchor="middle" fill="white" font-size="16" font-weight="bold">H2O</text>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Hydration Bot</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="health">FOR HEALTH</span>
+                                <h3 class="header-3">Hydration Bot</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: FOR WORK -->
+                        <div class="gift-card" data-category="work" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <rect x="70" y="70" width="170" height="90" rx="8" fill="#4361FF"/>
+                                    <rect x="95" y="85" width="120" height="8" rx="4" fill="rgba(255,255,255,0.3)"/>
+                                    <rect x="95" y="100" width="90" height="8" rx="4" fill="rgba(255,255,255,0.3)"/>
+                                    <text x="50%" y="140" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="20" font-weight="bold">git merge</text>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Merge Master</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="work">FOR WORK</span>
+                                <h3 class="header-3">Merge Master</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: FOR HARMONY -->
+                        <div class="gift-card" data-category="harmony" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <circle cx="115" cy="95" r="40" fill="#FF43F7"/>
+                                    <circle cx="195" cy="95" r="40" fill="#D835D0"/>
+                                    <circle cx="100" cy="85" r="4" fill="rgba(255,255,255,0.5)"/>
+                                    <circle cx="140" cy="85" r="4" fill="rgba(255,255,255,0.5)"/>
+                                    <circle cx="205" cy="85" r="4" fill="rgba(255,255,255,0.5)"/>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Spontaneous Coding</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="harmony">FOR HARMONY</span>
+                                <h3 class="header-3">Spontaneous Coding</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 5: FOR WORK -->
+                        <div class="gift-card" data-category="work" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <rect x="85" y="80" width="140" height="80" rx="8" fill="#E67E22"/>
+                                    <rect x="140" y="60" width="30" height="25" rx="5" fill="#D35400"/>
+                                    <rect x="148" y="45" width="14" height="20" fill="#D35400"/>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Keyboard Warrior</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="work">FOR WORK</span>
+                                <h3 class="header-3">Keyboard Warrior</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 6: FOR HEALTH -->
+                        <div class="gift-card" data-category="health" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <rect x="110" y="60" width="90" height="110" rx="45" fill="#2ECC71"/>
+                                    <text x="180" y="120" text-anchor="middle" fill="white" font-size="56" font-weight="bold">Z</text>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Stress-Free Sleep</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="health">FOR HEALTH</span>
+                                <h3 class="header-3">Stress-Free Sleep</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 7: FOR HARMONY -->
+                        <div class="gift-card" data-category="harmony" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <circle cx="155" cy="95" r="45" fill="#F39C12"/>
+                                    <circle cx="155" cy="95" r="30" fill="#E67E22"/>
+                                    <circle cx="155" cy="95" r="15" fill="#D35400"/>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Inner Peace Mug</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="harmony">FOR HARMONY</span>
+                                <h3 class="header-3">Inner Peace Mug</h3>
+                            </div>
+                        </div>
+
+                        <!-- Card 8: FOR WORK -->
+                        <div class="gift-card" data-category="work" tabindex="0">
+                            <div class="gift-card-image">
+                                <svg width="310" height="230" viewBox="0 0 310 230" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="310" height="230" fill="#ECF3F8"/>
+                                    <rect x="80" y="65" width="150" height="90" rx="5" fill="#34495E"/>
+                                    <rect x="90" y="75" width="130" height="60" rx="2" fill="#3D566E"/>
+                                    <rect x="125" y="155" width="60" height="8" rx="4" fill="#2C3E50"/>
+                                    <text x="50%" y="200" text-anchor="middle" fill="#7f8c8d" font-size="12" font-family="Montserrat, sans-serif" font-weight="600">Bug-Free Badge</text>
+                                </svg>
+                            </div>
+                            <div class="gift-card-content">
+                                <span class="gift-tag header-4" data-tag="work">FOR WORK</span>
+                                <h3 class="header-3">Bug-Free Badge</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer">
+            <div class="footer-container">
+                <div class="footer-cards">
+                    <div class="footer-card" tabindex="0">
+                        <div class="footer-card-icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="15" width="60" height="45" rx="10" fill="none" stroke="#181C29" stroke-width="3"/>
+                                <path d="M10 25 L40 45 L70 25" fill="none" stroke="#181C29" stroke-width="3"/>
+                            </svg>
+                        </div>
+                        <h4 class="action-large footer-card-title">CALL US</h4>
+                        <p class="header-3 footer-card-text">+1 (234) 567-890</p>
+                    </div>
+                    <div class="footer-card" tabindex="0">
+                        <div class="footer-card-icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="40" cy="40" r="30" fill="none" stroke="#181C29" stroke-width="3"/>
+                                <path d="M30 45 L35 50 L50 30" fill="none" stroke="#181C29" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h4 class="action-large footer-card-title">WRITE US</h4>
+                        <p class="header-3 footer-card-text">hello@christmas.shop</p>
+                    </div>
+                    <div class="footer-card" tabindex="0">
+                        <div class="footer-card-icon">
+                            <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M40 10 C30 10 20 18 20 30 C20 48 40 65 40 65 C40 65 60 48 60 30 C60 18 50 10 40 10 Z" fill="none" stroke="#181C29" stroke-width="3"/>
+                                <circle cx="40" cy="30" r="8" fill="none" stroke="#181C29" stroke-width="3"/>
+                            </svg>
+                        </div>
+                        <h4 class="action-large footer-card-title">MAGIC FOREST</h4>
+                        <p class="header-3 footer-card-text">Visit us on the map</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" aria-label="Telegram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="#181C29" stroke-width="1.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="none" stroke="#181C29" stroke-width="1.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#181C29" stroke-width="1.5"/>
+                                <circle cx="12" cy="12" r="5" fill="none" stroke="#181C29" stroke-width="1.5"/>
+                                <circle cx="17" cy="7" r="1.5" fill="#181C29"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="X">
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#181C29" stroke-width="1.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="footer-paragraph">Made in <a href="https://rs.school" target="_blank" rel="noopener noreferrer">Rolling Scopes School</a></p>
+                    <p class="footer-caption">Merry Christmas and Happy New Year</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
