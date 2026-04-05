@@ -298,6 +298,7 @@ body {
 .nav-item.active {
   background: var(--rgba-red-1);
   cursor: default;
+  pointer-events: none;
 }
 
 .nav-item .nav-link-text {
@@ -307,6 +308,17 @@ body {
 
 .nav-item.active .nav-link-text {
   color: var(--color-red);
+}
+
+span.nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  height: 40px;
+  border-radius: 12px;
+  text-decoration: none;
 }
 
 /* ===== HERO SECTION ===== */
@@ -857,6 +869,8 @@ body {
   border-radius: 20px;
   transition: transform 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer-card:hover { transform: translateY(-4px); }
