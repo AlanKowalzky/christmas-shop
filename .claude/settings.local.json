@@ -8,7 +8,8 @@
       "Bash(pip3 list:*)",
       "Bash(python:*)",
       "Bash(mkdir -p christmas-shop)",
-      "Bash(mv index.html gifts.html .gitignore assets css doc js christmas-shop/)"
+      "Bash(mv index.html gifts.html .gitignore assets css doc js christmas-shop/)",
+      "Bash(mkdir:*)"
     ]
   }
 }

@@ -111,4 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // stan początkowy
     updateSlider();
   }
+
+  // ===== Burger Menu Stage 1 (Fix) =====
+  const burgerBtn = document.querySelector('.Burger');
+  const navContainer = document.querySelector('.nav-container');
+  const navLinks = document.querySelectorAll('.nav-item');
+
+  if (burgerBtn && navContainer) {
+    burgerBtn.addEventListener('click', () => {
+      burgerBtn.classList.toggle('active');
+      navContainer.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+    });
+
+    // Zamykanie menu po kliknięciu w link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        burgerBtn.classList.remove('active');
+        navContainer.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+  }
 });
