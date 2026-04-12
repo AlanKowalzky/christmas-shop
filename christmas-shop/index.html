@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <body>
     <div class="page-container">
@@ -20,7 +21,7 @@
                     <span class="action-small" style="color: #181C29;">THE GIFTS</span>
                 </a>
                 <div class="nav-container">
-                    <nav class="nav-items">
+                    <nav class="nav-items" id="nav-menu">
                         <a href="gifts.html" class="nav-item">
                             <span class="action-small nav-link-text">GIFTS</span>
                         </a>
@@ -35,6 +36,11 @@
                         </a>
                     </nav>
                 </div>
+                <button class="Burger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </header>
 
@@ -282,6 +288,25 @@
             </div>
         </footer>
     </div>
+
+    <!-- Modal Window -->
+    <div id="gift-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img src="" alt="" id="modal-img">
+                </div>
+                <div class="modal-info">
+                    <span class="gift-tag header-4" id="modal-tag"></span>
+                    <h3 class="header-3" id="modal-title"></h3>
+                    <p class="paragraph" id="modal-description"></p>
+                    <div id="modal-powers"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
