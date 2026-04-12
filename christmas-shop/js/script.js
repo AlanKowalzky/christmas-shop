@@ -151,6 +151,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== Fetch and Display Best Gifts =====
+  async function loadBestGifts() {
+    const grid = document.querySelector('.best-gifts .gifts-grid');
+    if (!grid) return;
+
+    try {
+      const response = await fetch('gifts.json');
+      const allGifts = await response.json();
+
+      // Losowanie 4 prezentów
+      const shuffled = allGifts.sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 4);
+
+      grid.innerHTML = ''; // Czyścimy statyczny HTML
+
+      selected.forEach(gift => {
+        const categoryClass = gift.category.toLowerCase().replace('for ', '');
+        const card = document.createElement('div');
+        card.className = 'gift-card';
+        card.tabIndex = 0;
+        card.innerHTML = `
+          <div class="gift-card-image">
+            <img src="assets/images/gift-for-${categoryClass}.png" alt="${gift.name}">
+          </div>
+          <div class="gift-card-content">
+            <span class="gift-tag header-4" data-tag="${categoryClass}">${gift.category}</span>
+            <p class="header-3">${gift.name}</p>
+          </div>
+        `;
+        
+        card.addEventListener('click', () => openModal(gift));
+        grid.appendChild(card);
+      });
+    } catch (error) {
+      console.error('Error loading gifts:', error);
+    }
+  }
+
+  // Wywołanie ładowania prezentów
+  loadBestGifts();
+
   // ===== Modal Logic =====
   const modal = document.querySelector('#gift-modal');
   const modalClose = document.querySelector('.modal-close');

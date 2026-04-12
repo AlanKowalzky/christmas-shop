@@ -9,5 +9,49 @@
       "love": "+200",
       "dream": "+400"
     }
+  },
+  {
+    "name": "Hydration Bot",
+    "description": "Reminds you to drink water and stay hydrated throughout the day.",
+    "category": "For Health",
+    "superpowers": {
+      "live": "+400",
+      "create": "+200",
+      "love": "+300",
+      "dream": "+100"
+    }
+  },
+  {
+    "name": "Merge Master",
+    "description": "Perfectly merges all your branches without any conflicts, every time.",
+    "category": "For Work",
+    "superpowers": {
+      "live": "+200",
+      "create": "+500",
+      "love": "+100",
+      "dream": "+300"
+    }
+  },
+  {
+    "name": "Spontaneous Coding",
+    "description": "Increases creativity and allows you to write elegant code in minutes.",
+    "category": "For Harmony",
+    "superpowers": {
+      "live": "+300",
+      "create": "+400",
+      "love": "+500",
+      "dream": "+200"
+    }
+  },
+  {
+    "name": "Bug Hunter",
+    "description": "Finds even the most hidden bugs before they reach production.",
+    "category": "For Work",
+    "superpowers": {
+      "live": "+300",
+      "create": "+500",
+      "love": "+200",
+      "dream": "+400"
+    }
   }
 ]
