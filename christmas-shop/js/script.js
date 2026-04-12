@@ -127,9 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Zamykanie menu po kliknięciu w link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        burgerBtn.classList.remove('active');
-        navContainer.classList.remove('active');
-        document.body.classList.remove('no-scroll');
+        if (navContainer.classList.contains('active')) {
+          burgerBtn.classList.remove('active');
+          navContainer.classList.remove('active');
+          document.body.classList.remove('no-scroll');
+        }
       });
     });
   }

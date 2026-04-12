@@ -113,7 +113,7 @@
   transition: 0.3s;
 }
 
-/* Animacja zmiany w X */
+/* Animacja zmiany w X dla aktywności */
 .Burger.active span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
@@ -145,19 +145,21 @@
   .nav-container.active {
     right: 0;
   }
-
   .nav-items {
-    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    padding-top: 100px;
-  }
-
-  .nav-items {
-    flex-direction: column;
-    justify-content: center;
     height: 100%;
-    gap: 20px;
+    padding-top: 100px;
+    gap: 0px; /* Reset gap, use padding on items */
+  }
+  
+  .nav-item {
+    padding: 12px 20px;
+  }
+  
+  .nav-item span {
+    font-size: 24px; /* Większe napisy na telefonie */
   }
 
   body.no-scroll {
