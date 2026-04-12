@@ -523,7 +523,7 @@ span.nav-item {
 .slider-image-container svg {
   width: 200px;
   height: 200px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .slider-controls {
