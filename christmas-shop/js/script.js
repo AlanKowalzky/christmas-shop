@@ -10,10 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== Tab Filtering (Gifts page) =====
+  // Ta sekcja zostanie wywołana wewnątrz loadAllGifts, aby obsłużyć dynamiczne karty
+  function setupFiltering(giftCards) {
   const tabs = document.querySelectorAll('.tab');
-  const giftCards = document.querySelectorAll('.gifts-page-grid .gift-card');
 
-  if (tabs.length > 0 && giftCards.length > 0) {
+    if (tabs.length > 0) {
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         if (tab.classList.contains('active')) return;
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+  }
   }
 
   // ===== Countdown Timer (CTA section) =====
@@ -151,6 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  let giftsData = []; // Globalne przechowywanie danych o prezentach
+
   // ===== Fetch and Display Best Gifts =====
   async function loadBestGifts() {
     const grid = document.querySelector('.best-gifts .gifts-grid');
@@ -158,10 +162,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const response = await fetch('gifts.json');
-      const allGifts = await response.json();
+      giftsData = await response.json();
 
       // Losowanie 4 prezentów
-      const shuffled = allGifts.sort(() => 0.5 - Math.random());
+      const shuffled = [...giftsData].sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, 4);
 
       grid.innerHTML = ''; // Czyścimy statyczny HTML
@@ -170,6 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const categoryClass = gift.category.toLowerCase().replace('for ', '');
         const card = document.createElement('div');
         card.className = 'gift-card';
+        card.dataset.name = gift.name; // Ułatwia znalezienie danych dla modala
         card.tabIndex = 0;
         card.innerHTML = `
           <div class="gift-card-image">
@@ -180,8 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="header-3">${gift.name}</p>
           </div>
         `;
-        
-        card.addEventListener('click', () => openModal(gift));
         grid.appendChild(card);
       });
     } catch (error) {
@@ -192,18 +195,78 @@ document.addEventListener('DOMContentLoaded', () => {
   // Wywołanie ładowania prezentów
   loadBestGifts();
 
+  // ===== Fetch and Display All Gifts (Gifts Page) =====
+  async function loadAllGifts() {
+    const grid = document.querySelector('.gifts-page-grid');
+    if (!grid) return;
+
+    try {
+      const response = await fetch('gifts.json');
+      giftsData = await response.json();
+
+      grid.innerHTML = '';
+
+      giftsData.forEach(gift => {
+        const categoryClass = gift.category.toLowerCase().replace('for ', '');
+        const card = document.createElement('div');
+        card.className = 'gift-card';
+        card.dataset.category = categoryClass;
+        card.innerHTML = `
+          <div class="gift-card-image">
+            <img src="assets/images/gift-for-${categoryClass}.png" alt="${gift.name}">
+          </div>
+          <div class="gift-card-content">
+            <span class="gift-tag header-4" data-tag="${categoryClass}">${gift.category}</span>
+            <p class="header-3">${gift.name}</p>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      const giftCards = document.querySelectorAll('.gift-card');
+      setupFiltering(giftCards);
+    } catch (error) {
+      console.error('Error loading all gifts:', error);
+    }
+  }
+
+  loadAllGifts();
+
   // ===== Modal Logic =====
   const modal = document.querySelector('#gift-modal');
   const modalClose = document.querySelector('.modal-close');
+  const modalImg = document.querySelector('#modal-img');
 
   function openModal(giftData) {
     if (!modal) return;
     
-    // Wypełnianie danych (przykład)
+    const categoryClass = giftData.category.toLowerCase().replace('for ', '');
+    if (modalImg) {
+      modalImg.src = `assets/images/gift-for-${categoryClass}.png`;
+      modalImg.alt = giftData.name;
+    }
+
     document.querySelector('#modal-title').textContent = giftData.name;
     document.querySelector('#modal-description').textContent = giftData.description;
     document.querySelector('#modal-tag').textContent = giftData.category;
-    // Tutaj dodasz logikę dla supermocy (gwiazdki/skala)
+    
+    const powersContainer = document.querySelector('#modal-powers');
+    powersContainer.innerHTML = '';
+
+    Object.entries(giftData.superpowers).forEach(([power, value]) => {
+      const count = parseInt(value) / 100;
+      const icons = Array(5).fill(0).map((_, i) => `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="${i < count ? '#FF4646' : '#FF46461A'}">
+          <path d="M8 0L9.5 5.5H15L10.5 8.5L12 14L8 11L4 14L5.5 8.5L1 5.5H6.5L8 0Z" />
+        </svg>`).join('');
+
+      powersContainer.innerHTML += `
+        <div class="power-item">
+          <span class="header-4">${power.toUpperCase()}</span>
+          <span class="paragraph">${value}</span>
+          <div class="power-icons">${icons}</div>
+        </div>`;
+    });
 
     modal.classList.add('active');
     document.body.classList.add('no-scroll');
@@ -214,17 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('no-scroll');
   }
 
-  // Delegacja zdarzeń dla kart prezentów (obsłuży też te dodane dynamicznie)
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.gift-card');
     if (card) {
-      // Na razie symulujemy dane, docelowo pobierzemy je z załadowanego JSONa
-      const mockData = {
-        name: card.querySelector('.header-3').textContent,
-        description: "Wonderful holiday gift description...",
-        category: card.querySelector('.gift-tag').textContent
-      };
-      openModal(mockData);
+      const giftName = card.querySelector('.header-3').textContent;
+      const giftData = giftsData.find(g => g.name === giftName);
+      if (giftData) openModal(giftData);
     }
   });
 
