@@ -70,10 +70,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (prevBtn && nextBtn && sliderTrack) {
     let currentIndex = 0;
+    let stepCount = 0;
+
+    function getMaxIndex() {
+      const viewportWidth = document.querySelector('.slider-viewport').offsetWidth;
+      const totalWidth = sliderTrack.scrollWidth;
+      const itemWidth = sliderTrack.querySelector('.slider-item').offsetWidth;
+      const gap = 20;
+      
+      // Obliczamy ile pełnych kroków (item + gap) mieści się w pozostałej przestrzeni
+      return Math.round((totalWidth - viewportWidth) / (itemWidth + gap));
+    }
 
     nextBtn.addEventListener('click', () => {
-      const items = sliderTrack.querySelectorAll('.slider-item');
-      if (currentIndex < items.length - 3) {
+      if (currentIndex < getMaxIndex()) {
         currentIndex++;
         updateSlider();
       }
@@ -88,14 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateSlider() {
       const items = sliderTrack.querySelectorAll('.slider-item');
+      const maxIndex = getMaxIndex();
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
       if (currentIndex < 0) currentIndex = 0;
 
-      let totalOffset = 0;
       const gap = 20;
-
-      for (let i = 0; i < currentIndex; i++) {
-        totalOffset += items[i].offsetWidth + gap;
-      }
+      const itemWidth = items[0].offsetWidth;
+      const totalOffset = currentIndex * (itemWidth + gap);
 
       sliderTrack.style.transform = `translateX(-${totalOffset}px)`;
 
@@ -103,10 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
       prevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
       prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
 
-      const isEnd = currentIndex >= items.length - 3;
+      const isEnd = currentIndex >= maxIndex;
       nextBtn.style.pointerEvents = isEnd ? 'none' : 'auto';
       nextBtn.style.opacity = isEnd ? '0.5' : '1';
     }
+
+    // Resetuj pozycję przy zmianie rozmiaru okna
+    window.addEventListener('resize', () => {
+      currentIndex = 0;
+      updateSlider();
+    });
 
     // stan początkowy
     updateSlider();
@@ -133,6 +148,26 @@ document.addEventListener('DOMContentLoaded', () => {
           document.body.classList.remove('no-scroll');
         }
       });
+    });
+  }
+
+  // ===== Modal Logic =====
+  const modal = document.querySelector('#gift-modal');
+  const giftCardsAll = document.querySelectorAll('.gift-card');
+  const modalClose = document.querySelector('.modal-close');
+
+  if (modal && giftCardsAll.length > 0) {
+    giftCardsAll.forEach(card => {
+      card.addEventListener('click', () => {
+        // Tutaj docelowo dodasz ładowanie danych z JSON
+        modal.classList.add('active');
+        document.body.classList.add('no-scroll');
+      });
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('active');
+      document.body.classList.remove('no-scroll');
     });
   }
 });
