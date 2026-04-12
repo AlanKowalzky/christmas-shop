@@ -1,0 +1,13 @@
+[
+  {
+    "name": "Console.log Guru",
+    "description": "This gift is perfect for those who love to debug and find solutions to complex problems.",
+    "category": "For Work",
+    "superpowers": {
+      "live": "+500",
+      "create": "+300",
+      "love": "+200",
+      "dream": "+400"
+    }
+  }
+]

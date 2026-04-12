@@ -153,21 +153,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== Modal Logic =====
   const modal = document.querySelector('#gift-modal');
-  const giftCardsAll = document.querySelectorAll('.gift-card');
   const modalClose = document.querySelector('.modal-close');
 
-  if (modal && giftCardsAll.length > 0) {
-    giftCardsAll.forEach(card => {
-      card.addEventListener('click', () => {
-        // Tutaj docelowo dodasz ładowanie danych z JSON
-        modal.classList.add('active');
-        document.body.classList.add('no-scroll');
-      });
-    });
+  function openModal(giftData) {
+    if (!modal) return;
+    
+    // Wypełnianie danych (przykład)
+    document.querySelector('#modal-title').textContent = giftData.name;
+    document.querySelector('#modal-description').textContent = giftData.description;
+    document.querySelector('#modal-tag').textContent = giftData.category;
+    // Tutaj dodasz logikę dla supermocy (gwiazdki/skala)
 
-    modalClose.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.classList.remove('no-scroll');
+    modal.classList.add('active');
+    document.body.classList.add('no-scroll');
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  }
+
+  // Delegacja zdarzeń dla kart prezentów (obsłuży też te dodane dynamicznie)
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.gift-card');
+    if (card) {
+      // Na razie symulujemy dane, docelowo pobierzemy je z załadowanego JSONa
+      const mockData = {
+        name: card.querySelector('.header-3').textContent,
+        description: "Wonderful holiday gift description...",
+        category: card.querySelector('.gift-tag').textContent
+      };
+      openModal(mockData);
+    }
+  });
+
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+
+  // Zamknij po kliknięciu w overlay
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
     });
   }
 });
