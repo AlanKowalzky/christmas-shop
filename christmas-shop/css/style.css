@@ -949,6 +949,59 @@ span.nav-item {
   .logo:hover { background: rgba(0, 0, 0, 0.05); }
 }
 
+/* ===== RESPONSIVE DESIGN (RWD) ===== */
+@media (max-width: 768px) {
+  .header-1 { font-size: 24px; }
+  .header-2 { font-size: 20px; }
+
+  .hero {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+
+  .about-container {
+    flex-direction: column;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .about-content {
+    width: 100%;
+    padding: 0 20px;
+    align-items: center;
+  }
+
+  .about-inner {
+    padding: 40px 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-content .header-2 {
+    text-align: center;
+  }
+
+  .about-image {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-cards {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-card {
+    width: 100%;
+  }
+}
+
 /* ===== MODAL STYLES ===== */
 .modal-overlay {
   position: fixed;
