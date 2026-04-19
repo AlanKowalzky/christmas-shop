@@ -1,0 +1,28 @@
+graph TD
+    A[DOM Content Loaded] --> B{Zmienna giftsData pusta?}
+    B -- TAK --> C[fetch gifts.json]
+    B -- NIE --> D[Użyj istniejących danych]
+    C --> E[Zapisz do giftsData]
+    E --> F{Jaka strona?}
+    D --> F
+
+    subgraph "index.html"
+    F -- Home --> G[loadBestGifts]
+    G --> H[Losowanie 4 prezentów - Shuffle]
+    H --> I[Renderuj 4 karty]
+    end
+
+    subgraph "gifts.html"
+    F -- Gifts --> J[loadAllGifts]
+    J --> K[Renderuj wszystkie karty]
+    K --> L[setupFiltering]
+    L --> M{Szerokość okna <= 768px?}
+    M -- TAK --> N[Pokaż pierwsze 8 kart + Przycisk SHOW MORE]
+    M -- NIE --> O[Pokaż wszystkie karty w kategorii]
+    N -- Klik SHOW MORE --> P[Wyświetl resztę kart w kategorii]
+    end
+
+    style C fill:#f96,stroke:#333,stroke-width:2px
+    style H fill:#bbf,stroke:#333,stroke-width:2px
+    style N fill:#ff9,stroke:#333,stroke-width:2px
+    style P fill:#bfb,stroke:#333,stroke-width:2px

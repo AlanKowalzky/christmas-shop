@@ -209,11 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
 
     try {
-      if (giftsData.length === 0) {
-        const response = await fetch('gifts.json');
-        giftsData = await response.json();
-      }
-
+      await ensureGiftsData(); // Pobierz dane tylko jeśli ich nie ma
       const shuffled = [...giftsData].sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, 4);
 
@@ -251,11 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
 
     try {
-      if (giftsData.length === 0) {
-        const response = await fetch('gifts.json');
-        giftsData = await response.json();
-      }
-
+      await ensureGiftsData(); // Pobierz dane tylko jeśli ich nie ma
       grid.innerHTML = '';
 
       giftsData.forEach(gift => {
@@ -281,6 +273,15 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (error) {
       console.error('Error loading all gifts:', error);
     }
+  }
+
+  // Funkcja pomocnicza zapewniająca jednorazowe pobranie danych
+  async function ensureGiftsData() {
+    if (giftsData.length === 0) {
+      const response = await fetch('gifts.json');
+      giftsData = await response.json();
+    }
+    return giftsData;
   }
 
   loadAllGifts();
