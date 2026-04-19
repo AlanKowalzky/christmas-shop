@@ -277,10 +277,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.remove('no-scroll');
   }
 
+  // Obsługa klawisza Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.gift-card');
     if (card) {
-      const giftName = card.querySelector('.header-3').textContent;
+      // Szukanie po nazwie lub dataset (bezpieczniejsze)
+      const giftName = card.querySelector('.header-3').textContent.trim();
       const giftData = giftsData.find(g => g.name === giftName);
       if (giftData) openModal(giftData);
     }
