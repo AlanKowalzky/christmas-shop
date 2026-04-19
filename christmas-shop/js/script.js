@@ -38,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Countdown Timer (CTA section) =====
-  const countdownNumber = document.querySelector('.countdown-number');
-  if (countdownNumber) {
+  const countdownNumbers = document.querySelectorAll('.countdown-number');
+  if (countdownNumbers.length > 0) {
     function updateCountdown() {
       const christmas = new Date(new Date().getFullYear(), 11, 25);
       const now = new Date();
       if (now > christmas) {
-        christmas.setFullYear(christmas.getFullYear() + 1);
+        christmas.setFullYear(now.getFullYear() + 1);
       }
       const diff = christmas - now;
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const numbers = document.querySelectorAll('.countdown-number');
 
       if (numbers.length >= 4) {
-        numbers[0].textContent = String(days).padStart(2, '0');
-        numbers[1].textContent = String(hours).padStart(2, '0');
-        numbers[2].textContent = String(minutes).padStart(2, '0');
-        numbers[3].textContent = String(seconds).padStart(2, '0');
+        numbers[0].textContent = days;
+        numbers[1].textContent = hours;
+        numbers[2].textContent = minutes;
+        numbers[3].textContent = seconds;
       }
     }
     updateCountdown();
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Burger Menu Stage 1 (Fix) =====
   const burgerBtn = document.querySelector('.Burger');
   const navContainer = document.querySelector('.nav-container');
-  const navLinks = document.querySelectorAll('.nav-item');
+  const navLinks = document.querySelectorAll('.nav-link-text'); // Celujemy w tekst/linki wewnątrz
 
   if (burgerBtn && navContainer) {
     burgerBtn.addEventListener('click', () => {
@@ -141,15 +141,23 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('no-scroll');
     });
 
-    // Zamykanie menu po kliknięciu w link
+    // Zamykanie menu po kliknięciu w link (obsługa nawigacji między stronami)
     navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (navContainer.classList.contains('active')) {
-          burgerBtn.classList.remove('active');
-          navContainer.classList.remove('active');
-          document.body.classList.remove('no-scroll');
-        }
+      const parentLink = link.closest('.nav-item');
+      parentLink.addEventListener('click', () => {
+        burgerBtn.classList.remove('active');
+        navContainer.classList.remove('active');
+        document.body.classList.remove('no-scroll');
       });
+    });
+
+    // Resetuj stan menu przy zmianie szerokości okna powyżej 768px
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        burgerBtn.classList.remove('active');
+        navContainer.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+      }
     });
   }
 
@@ -164,9 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('gifts.json');
       giftsData = await response.json();
 
-      // Losowanie 4 prezentów
-      const shuffled = [...giftsData].sort(() => 0.5 - Math.random());
-      const selected = shuffled.slice(0, 4);
+      // Pobieramy pierwsze 4 prezenty zgodnie z kolejnością w designie
+      const selected = giftsData.slice(0, 4);
 
       grid.innerHTML = ''; // Czyścimy statyczny HTML
 
@@ -246,12 +253,16 @@ document.addEventListener('DOMContentLoaded', () => {
       modalImg.alt = giftData.name;
     }
 
-    document.querySelector('#modal-title').textContent = giftData.name;
-    document.querySelector('#modal-description').textContent = giftData.description;
-    document.querySelector('#modal-tag').textContent = giftData.category;
+    const modalTitle = document.querySelector('#modal-title');
+    const modalDesc = document.querySelector('#modal-description');
+    const modalTag = document.querySelector('#modal-tag');
+    if (modalTitle) modalTitle.textContent = giftData.name;
+    if (modalDesc) modalDesc.textContent = giftData.description;
+    if (modalTag) modalTag.textContent = giftData.category;
     
     const powersContainer = document.querySelector('#modal-powers');
-    powersContainer.innerHTML = '';
+    if (powersContainer) {
+      powersContainer.innerHTML = '';
 
     Object.entries(giftData.superpowers).forEach(([power, value]) => {
       const count = parseInt(value) / 100;

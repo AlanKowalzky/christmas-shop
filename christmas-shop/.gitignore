@@ -21,3 +21,5 @@ Thumbs.db
 
 # Project docs (local only)
 doc/
+diagrams/
+*.md
