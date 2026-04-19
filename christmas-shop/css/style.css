@@ -497,7 +497,7 @@ span.nav-item {
   font-family: var(--font-montserrat);
   font-weight: 600;
   font-size: 80px;
-  line-height: 98px;
+  line-height: 122.5%;
   text-transform: uppercase;
   color: var(--color-white);
   white-space: nowrap;
@@ -953,6 +953,7 @@ span.nav-item {
 @media (max-width: 768px) {
   .header-1 { font-size: 24px; }
   .header-2 { font-size: 20px; }
+  .slider-text { font-size: 50px; }
 
   .hero {
     padding: 60px 20px;
@@ -1000,6 +1001,10 @@ span.nav-item {
   .footer-card {
     width: 100%;
   }
+}
+
+@media (max-width: 380px) {
+  .slider-text { font-size: 40px; }
 }
 
 /* ===== MODAL STYLES ===== */
