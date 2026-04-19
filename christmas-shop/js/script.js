@@ -345,10 +345,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.gift-card');
-    if (card) {
-      // Szukanie po nazwie lub dataset (bezpieczniejsze)
-      const giftName = card.querySelector('.header-3').textContent.trim();
-      const giftData = giftsData.find(g => g.name === giftName);
+    if (card && giftsData.length > 0) {
+      // Używamy dataset.name, który ustawiliśmy podczas renderowania
+      const giftName = card.dataset.name || card.querySelector('.header-3').textContent.trim();
+      const giftData = giftsData.find(g => g.name.trim() === giftName.trim());
       if (giftData) openModal(giftData);
     }
   });
