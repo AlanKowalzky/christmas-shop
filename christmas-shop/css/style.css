@@ -89,7 +89,7 @@ body {
 .header-3 {
   font-family: var(--font-montserrat);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 152%;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -116,7 +116,7 @@ body {
 .action-large {
   font-family: var(--font-montserrat);
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 152%;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -171,6 +171,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease;
   cursor: pointer;
+  animation: fadeIn 0.4s ease forwards;
 }
 
 
@@ -801,7 +802,19 @@ span.nav-item {
   max-width: var(--container-width);
 }
 
-.gift-card.hidden { display: none; }
+.gift-card.hidden {
+  display: none;
+}
+
+/* Animation for smooth filtering */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 /* Tag colors - gifts page */
 .gifts-page-grid .gift-card .gift-tag[data-tag="work"],
@@ -839,19 +852,17 @@ span.nav-item {
   gap: 12px;
   width: 100%;
   max-width: var(--container-width);
-  min-height: 204px;
-  border-radius: 60px;
 }
 
 .footer-card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  gap: 12px;
-  width: calc(33.333% - 8px);
-  height: 204px;
+  gap: 20px;
+  min-height: 204px;
   background: var(--color-card-bg);
   border-radius: 20px;
   transition: transform 0.3s ease, background 0.3s ease;
@@ -870,8 +881,8 @@ span.nav-item {
 
 .footer-card-icon img,
 .footer-card-icon svg {
-  width: 80px;
-  height: 80px;
+  width: 80px !important;
+  height: 80px !important;
   object-fit: contain;
 }
 
@@ -907,17 +918,20 @@ span.nav-item {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
+  border: 1px solid var(--color-dark);
+  border-radius: 15px;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
-
 
 .social-icon img,
 .social-icon svg {
   width: 24px;
   height: 24px;
+}
+
+.social-icon svg path {
+  transition: stroke 0.3s ease, fill 0.3s ease;
 }
 
 .footer-paragraph {
@@ -944,7 +958,10 @@ span.nav-item {
   .footer-card:hover { transform: translateY(-4px); background: #dde8f0; }
   .tab:hover:not(.active) { background: var(--rgba-white-2); }
   .slider-btn:hover { border-color: var(--color-white); background: var(--rgba-white-2); }
-  .social-icon:hover { opacity: 0.7; }
+  .social-icon:hover { background-color: var(--color-white); border-color: var(--color-white); }
+  .social-icon:hover svg { color: var(--color-red) !important; }
+  .social-icon:hover svg path { stroke: currentColor; }
+  .social-icon:hover svg path[fill] { fill: currentColor; }
   .footer-bottom a:hover { opacity: 0.7; text-decoration: underline; }
   .logo:hover { background: rgba(0, 0, 0, 0.05); }
 }

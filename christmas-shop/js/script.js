@@ -12,20 +12,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== Tab Filtering (Gifts page) =====
   // Ta sekcja zostanie wywołana wewnątrz loadAllGifts, aby obsłużyć dynamiczne karty
   function setupFiltering(giftCards) {
-  const tabs = document.querySelectorAll('.tab');
+    const tabsContainer = document.querySelector('.tabs');
+    const tabs = document.querySelectorAll('.tab');
 
-    if (tabs.length > 0) {
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        if (tab.classList.contains('active')) return;
+    if (tabsContainer) {
+      tabsContainer.addEventListener('click', (e) => {
+        const clickedTab = e.target.closest('.tab');
+        if (!clickedTab || clickedTab.classList.contains('active')) return;
 
-        // Remove active from all tabs
-        tabs.forEach((t) => t.classList.remove('active'));
-        tab.classList.add('active');
+        // Aktualizacja stanu wizualnego buttonów
+        tabs.forEach(t => t.classList.remove('active'));
+        clickedTab.classList.add('active');
 
-        const category = tab.dataset.category;
+        const category = clickedTab.dataset.category;
 
-        giftCards.forEach((card) => {
+        // Filtrowanie kart
+        giftCards.forEach(card => {
+          // Resetujemy animację, aby odtworzyła się przy ponownym pokazaniu
+          card.style.animation = 'none';
+          card.offsetHeight; /* trigger reflow */
+          card.style.animation = null;
+
           if (category === 'all' || card.dataset.category === category) {
             card.classList.remove('hidden');
           } else {
@@ -33,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
-    });
-  }
+    }
   }
 
   // ===== Countdown Timer (CTA section) =====
@@ -179,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       selected.forEach(gift => {
         const categoryClass = gift.category.toLowerCase().replace('for ', '');
+        const categoryLabel = gift.category.toUpperCase().replace('FOR ', '');
         const card = document.createElement('div');
         card.className = 'gift-card';
         card.dataset.name = gift.name; // Ułatwia znalezienie danych dla modala
@@ -188,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="assets/images/gift-for-${categoryClass}.png" alt="${gift.name}">
           </div>
           <div class="gift-card-content">
-            <span class="gift-tag header-4" data-tag="${categoryClass}">${gift.category}</span>
+            <span class="gift-tag header-4" data-tag="${categoryClass}">${categoryLabel}</span>
             <p class="header-3">${gift.name}</p>
           </div>
         `;
@@ -215,6 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       giftsData.forEach(gift => {
         const categoryClass = gift.category.toLowerCase().replace('for ', '');
+        const categoryLabel = gift.category.toUpperCase().replace('FOR ', '');
         const card = document.createElement('div');
         card.className = 'gift-card';
         card.dataset.category = categoryClass;
@@ -223,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="assets/images/gift-for-${categoryClass}.png" alt="${gift.name}">
           </div>
           <div class="gift-card-content">
-            <span class="gift-tag header-4" data-tag="${categoryClass}">${gift.category}</span>
+            <span class="gift-tag header-4" data-tag="${categoryClass}">${categoryLabel}</span>
             <p class="header-3">${gift.name}</p>
           </div>
         `;
