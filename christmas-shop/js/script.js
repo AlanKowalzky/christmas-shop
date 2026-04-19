@@ -1,6 +1,8 @@
 /* ===== Christmas Shop - JavaScript ===== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  let giftsData = []; // Centralna baza danych
+
   // ===== Explore Buttons (navigate to Gifts page) =====
   document.querySelectorAll('.btn-explore').forEach((btn) => {
     btn.addEventListener('click', (e) => {
@@ -14,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function setupFiltering(giftCards) {
     const tabsContainer = document.querySelector('.tabs');
     const tabs = document.querySelectorAll('.tab');
+    const showMoreBtn = document.querySelector('#show-more-btn');
+    let currentCategory = 'all';
 
     if (tabsContainer) {
       tabsContainer.addEventListener('click', (e) => {
@@ -21,26 +25,58 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!clickedTab || clickedTab.classList.contains('active')) return;
 
         // Aktualizacja stanu wizualnego buttonów
-        tabs.forEach(t => t.classList.remove('active'));
+        Array.from(tabs).forEach(t => t.classList.remove('active'));
         clickedTab.classList.add('active');
-
-        const category = clickedTab.dataset.category;
-
-        // Filtrowanie kart
-        giftCards.forEach(card => {
-          // Resetujemy animację, aby odtworzyła się przy ponownym pokazaniu
-          card.style.animation = 'none';
-          card.offsetHeight; /* trigger reflow */
-          card.style.animation = null;
-
-          if (category === 'all' || card.dataset.category === category) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
+        currentCategory = clickedTab.dataset.category;
+        
+        updateVisibleCards(true);
       });
     }
+
+    function updateVisibleCards(resetMobileLimit = false) {
+      const isMobile = window.innerWidth <= 768;
+      let visibleCount = 0;
+
+      giftCards.forEach(card => {
+        const matchesCategory = currentCategory === 'all' || card.dataset.category === currentCategory;
+        
+        if (matchesCategory) {
+          // Restart animacji fadeIn przy każdej zmianie kategorii
+          card.style.animation = 'none';
+          card.offsetHeight; /* trigger reflow */
+          card.style.animation = '';
+
+          // Logika limitu 8 kart na mobile
+          if (isMobile && resetMobileLimit && visibleCount >= 8) {
+            card.classList.add('hidden');
+          } else {
+            card.classList.remove('hidden');
+            visibleCount++;
+          }
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Zarządzanie przyciskiem SHOW MORE
+      if (showMoreBtn) {
+        const totalInCategory = Array.from(giftCards).filter(c => 
+          currentCategory === 'all' || c.dataset.category === currentCategory
+        ).length;
+        
+        showMoreBtn.parentElement.style.display = (isMobile && totalInCategory > visibleCount) ? 'flex' : 'none';
+      }
+    }
+
+    if (showMoreBtn) {
+      showMoreBtn.addEventListener('click', () => {
+        updateVisibleCards(false); // Pokaż wszystkie w danej kategorii
+        showMoreBtn.parentElement.style.display = 'none';
+      });
+    }
+
+    window.addEventListener('resize', () => updateVisibleCards(true));
+    updateVisibleCards(true);
   }
 
   // ===== Countdown Timer (CTA section) =====
@@ -167,19 +203,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  let giftsData = []; // Globalne przechowywanie danych o prezentach
-
   // ===== Fetch and Display Best Gifts =====
   async function loadBestGifts() {
     const grid = document.querySelector('.best-gifts .gifts-grid');
     if (!grid) return;
 
     try {
-      const response = await fetch('gifts.json');
-      giftsData = await response.json();
+      if (giftsData.length === 0) {
+        const response = await fetch('gifts.json');
+        giftsData = await response.json();
+      }
 
-      // Pobieramy pierwsze 4 prezenty zgodnie z kolejnością w designie
-      const selected = giftsData.slice(0, 4);
+      const shuffled = [...giftsData].sort(() => 0.5 - Math.random());
+      const selected = shuffled.slice(0, 4);
 
       grid.innerHTML = ''; // Czyścimy statyczny HTML
 
@@ -215,8 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
 
     try {
-      const response = await fetch('gifts.json');
-      giftsData = await response.json();
+      if (giftsData.length === 0) {
+        const response = await fetch('gifts.json');
+        giftsData = await response.json();
+      }
 
       grid.innerHTML = '';
 
@@ -238,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
         grid.appendChild(card);
       });
 
-      const giftCards = document.querySelectorAll('.gift-card');
+      const giftCards = grid.querySelectorAll('.gift-card');
       setupFiltering(giftCards);
     } catch (error) {
       console.error('Error loading all gifts:', error);
@@ -287,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>`;
     });
     powersContainer.innerHTML = powersHTML;
+    }
 
     modal.classList.add('active');
     document.body.classList.add('no-scroll');
