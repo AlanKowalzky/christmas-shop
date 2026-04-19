@@ -803,7 +803,7 @@ span.nav-item {
 }
 
 .gift-card.hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Animation for smooth filtering */
@@ -948,6 +948,7 @@ span.nav-item {
   color: var(--color-red);
   text-decoration: none;
   transition: opacity 0.3s ease;
+  font-family: var(--font-allura);
 }
 
 /* ===== HOVER — tylko Desktop ===== */
