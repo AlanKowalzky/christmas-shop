@@ -262,22 +262,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const powersContainer = document.querySelector('#modal-powers');
     if (powersContainer) {
-      powersContainer.innerHTML = '';
+      let powersHTML = '';
 
     Object.entries(giftData.superpowers).forEach(([power, value]) => {
-      const count = parseInt(value) / 100;
-      const icons = Array(5).fill(0).map((_, i) => `
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="${i < count ? '#FF4646' : '#FF46461A'}">
+      const filledStars = Math.floor(parseInt(value) / 100);
+      const starsSVG = Array(5).fill(0).map((_, i) => `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="${i < filledStars ? '#FF4646' : '#FF46461A'}">
           <path d="M8 0L9.5 5.5H15L10.5 8.5L12 14L8 11L4 14L5.5 8.5L1 5.5H6.5L8 0Z" />
         </svg>`).join('');
 
-      powersContainer.innerHTML += `
+      powersHTML += `
         <div class="power-item">
           <span class="header-4">${power.toUpperCase()}</span>
           <span class="paragraph">${value}</span>
-          <div class="power-icons">${icons}</div>
+          <div class="power-icons">${starsSVG}</div>
         </div>`;
     });
+    powersContainer.innerHTML = powersHTML;
 
     modal.classList.add('active');
     document.body.classList.add('no-scroll');
