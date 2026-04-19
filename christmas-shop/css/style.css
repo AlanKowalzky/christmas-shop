@@ -1063,19 +1063,24 @@ span.nav-item {
 .power-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
 .power-item .header-4 {
-  flex: 1;
+  width: 80px;
 }
 
 .power-item .paragraph {
-  margin-right: 8px;
+  width: 40px;
+  text-align: left;
 }
 
 .power-icons {
   display: flex;
-  gap: 4px;
+  gap: 8px;
+}
+
+.power-icons svg {
+  transition: fill 0.3s ease;
 }
