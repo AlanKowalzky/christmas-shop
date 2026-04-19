@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('div');
         card.className = 'gift-card';
         card.dataset.category = categoryClass;
+        card.dataset.name = gift.name;
         card.innerHTML = `
           <div class="gift-card-image">
             <img src="assets/images/gift-for-${categoryClass}.png" alt="${gift.name}">
